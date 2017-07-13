@@ -29,6 +29,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile group: 'org.webjars', name: 'bootstrap', version: '3.3.7'
 	compile group: 'org.webjars', name: 'jquery', version: '3.2.1'
+//	testCompile group: 'com.h2database', name: 'h2', version: '1.4.196'
 	runtime('com.h2database:h2')
+	testCompile('com.h2database:h2:1.4.196')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
