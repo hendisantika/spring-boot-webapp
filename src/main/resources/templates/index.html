@@ -17,12 +17,30 @@
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron">
-        <img src="../static/images/hendi1.jpeg" width="1000"
-             th:src="@{images/hendi1.jpeg}"/>
-        <h1>Hello</h1>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Home</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/product/new">Create Product</a></li>
+                </ul>
 
-        <h2>Fellow Spring Framework Gurus!!!</h2>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <div class="row text-center">
+            <div class="">
+                <h2>Spring Framework Guru</h2>
+
+                <h3>Spring Boot Web App</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <img src="/images/hendi1.jpeg" width="400" />
+        </div>
     </div>
 </div>
 
