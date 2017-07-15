@@ -28,3 +28,6 @@ spring:
       settings:
         trace: false
         web-allow-others: false
+  thymeleaf:
+    cache: false
+    prefix: file:./src/main/resources/templates/
