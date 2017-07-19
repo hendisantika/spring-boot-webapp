@@ -2,6 +2,7 @@ package com.hendisantika.webapp.domain;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by hendisantika on 7/20/17.
