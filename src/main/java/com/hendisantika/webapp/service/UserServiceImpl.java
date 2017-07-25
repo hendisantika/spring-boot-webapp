@@ -1,11 +1,14 @@
 package com.hendisantika.webapp.service;
 
+import com.hendisantika.webapp.domain.User;
 import com.hendisantika.webapp.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Profile("springdatajpa")
@@ -44,6 +47,7 @@ public class UserServiceImpl implements UserService{
         }
         return userRepository.save(domainObject);
     }
+
     @Override
     @Transactional
     public void delete(Integer id) {
