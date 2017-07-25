@@ -2,6 +2,7 @@ package com.hendisantika.webapp.service;
 
 import com.hendisantika.webapp.domain.User;
 import com.hendisantika.webapp.repositories.UserRepository;
+import com.hendisantika.webapp.service.security.EncryptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;

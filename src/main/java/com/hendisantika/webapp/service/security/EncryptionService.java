@@ -1,4 +1,4 @@
-package com.hendisantika.webapp.service;
+package com.hendisantika.webapp.service.security;
 
 /**
  * Created by IntelliJ IDEA.

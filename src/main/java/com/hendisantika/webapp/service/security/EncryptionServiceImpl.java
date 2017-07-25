@@ -1,4 +1,4 @@
-package com.hendisantika.webapp.service;
+package com.hendisantika.webapp.service.security;
 
 import org.jasypt.util.password.StrongPasswordEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
