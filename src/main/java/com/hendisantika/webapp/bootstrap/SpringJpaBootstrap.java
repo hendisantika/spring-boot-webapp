@@ -27,28 +27,29 @@ import java.util.List;
 
 @Component
 public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
+    @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
     private UserService userService;
+
+    @Autowired
     private RoleService roleService;
 
     private Logger log = Logger.getLogger(SpringJpaBootstrap.class);
 
-    @Autowired
     public void setProductRepository(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
-    @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
     }
 
-    @Autowired
     public void setRoleService(RoleService roleService) {
         this.roleService = roleService;
     }
 
-    @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         loadProducts();
         loadUsers();
