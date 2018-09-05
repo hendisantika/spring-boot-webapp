@@ -1,5 +1,7 @@
 package com.hendisantika.webapp.domain;
 
+import lombok.*;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinTable;
@@ -11,6 +13,11 @@ import java.util.List;
  * Created by hendisantika on 7/20/17.
  */
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Role extends AbstractDomainClass {
     private String role;
 
