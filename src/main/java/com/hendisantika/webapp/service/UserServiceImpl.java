@@ -48,7 +48,6 @@ public class UserServiceImpl implements UserService{
         }
         return userRepository.save(domainObject);
     }
-
     @Override
     @Transactional
     public void delete(Integer id) {
