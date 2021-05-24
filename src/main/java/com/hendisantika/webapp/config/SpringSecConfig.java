@@ -1,7 +1,5 @@
 package com.hendisantika.webapp.config;
 
-import org.jasypt.springsecurity3.authentication.encoding.PasswordEncoder;
-import org.jasypt.util.password.StrongPasswordEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -10,8 +8,11 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,7 +24,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  * To change this template use File | Settings | File Templates.
  */
 @Configuration
+@EnableWebSecurity
 public class SpringSecConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
     private AuthenticationProvider authenticationProvider;
 
     @Autowired
@@ -32,16 +35,21 @@ public class SpringSecConfig extends WebSecurityConfigurerAdapter {
         this.authenticationProvider = authenticationProvider;
     }
 
+    //    @Bean
+//    public PasswordEncoder passwordEncoder(StrongPasswordEncryptor passwordEncryptor){
+//        PasswordEncoder passwordEncoder = new PasswordEncoder();
+//        passwordEncoder.setPasswordEncryptor(passwordEncryptor);
+//        return passwordEncoder;
+//    }
     @Bean
-    public PasswordEncoder passwordEncoder(StrongPasswordEncryptor passwordEncryptor){
-        PasswordEncoder passwordEncoder = new PasswordEncoder();
-        passwordEncoder.setPasswordEncryptor(passwordEncryptor);
-        return passwordEncoder;
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(20);
     }
+
 
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider(PasswordEncoder passwordEncoder,
-                                                               UserDetailsService userDetailsService){
+                                                               UserDetailsService userDetailsService) {
 
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
         daoAuthenticationProvider.setPasswordEncoder(passwordEncoder);

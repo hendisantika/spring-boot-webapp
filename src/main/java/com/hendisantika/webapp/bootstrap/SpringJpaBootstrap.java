@@ -6,7 +6,7 @@ import com.hendisantika.webapp.domain.User;
 import com.hendisantika.webapp.repositories.ProductRepository;
 import com.hendisantika.webapp.service.RoleService;
 import com.hendisantika.webapp.service.UserService;
-import org.apache.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -25,13 +25,12 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 
+@Log4j2
 @Component
 public class SpringJpaBootstrap implements ApplicationListener<ContextRefreshedEvent> {
     private ProductRepository productRepository;
     private UserService userService;
     private RoleService roleService;
-
-    private Logger log = Logger.getLogger(SpringJpaBootstrap.class);
 
     @Autowired
     public void setProductRepository(ProductRepository productRepository) {

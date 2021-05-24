@@ -2,7 +2,7 @@ package com.hendisantika.webapp;
 
 import com.hendisantika.webapp.domain.Product;
 import com.hendisantika.webapp.repositories.ProductRepository;
-import org.apache.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -13,11 +13,10 @@ import java.math.BigDecimal;
 /**
  * Created by hendisantika on 7/13/17.
  */
+@Log4j2
 @Component
 public class ProductLoader implements ApplicationListener<ContextRefreshedEvent> {
     private ProductRepository productRepository;
-
-    private Logger log = Logger.getLogger(ProductLoader.class);
 
     @Autowired
     public void setProductRepository(ProductRepository productRepository) {
