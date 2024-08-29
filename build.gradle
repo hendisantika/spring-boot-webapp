@@ -21,7 +21,7 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation('org.jasypt:jasypt:1.9.2')
 	implementation('org.jasypt:jasypt-springsecurity3:1.9.2')
-	implementation group: 'org.webjars', name: 'bootstrap', version: '5.0.0'
+	implementation group: 'org.webjars', name: 'bootstrap', version: '5.3.3'
 	implementation group: 'org.webjars', name: 'jquery', version: '3.7.1'
 	runtimeOnly 'com.h2database:h2'
 	compileOnly 'org.projectlombok:lombok'
